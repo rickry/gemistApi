@@ -76,15 +76,17 @@ jQuery(document).ready(function ($) {
         const video = document.querySelector("video");
         const source = data.path;
 
-        let details = `<tr>
-                <td>$(data.pastor)</td>
-                </tr>`
+        let details = `<tr><td>Dominee</td><td>${data.details.pastor}</td></tr>
+                <tr><td>Ouderling</td><td>${data.details.elder}</td></tr>
+                <tr><td>Band</td><td>${data.details.band}</td></tr>
+                <tr><td>Collecte</td><td>${data.details.collection}</td></tr>
+                <tr><td>Techniek</td><td>${data.details.technic}</td></tr>`
 
 
         $("<table>", {
             "class": "details",
-            html: ''
-        }).appendTo("#box");
+            html: details
+        }).appendTo(".videoDetails");
 
         $('.player_container').show()
         // For more options see: https://github.com/sampotts/plyr/#options
